@@ -1,18 +1,46 @@
 {
-  // Dead Zone Protocol launcher config. Host a copy online and put its raw link in LauncherConfig.RemoteUrl
-  // (src\Config.cs) to change servers / banner without shipping a new exe. Comments are allowed.
+  // Dead Zone Protocol launcher config. The launcher reads the hosted copy (RemoteUrl in src\Config.cs);
+  // this file is the fallback built into the exe. Comments like this one are allowed.
+  // Times: "2026-11-01 18:00" = the player's own clock, add an offset for server time: "2026-11-01T18:00:00+01:00".
 
   "tagline": "EXTRACTION SURVIVAL  //  CHERNARUS",
   "discord": "",
   "website": "",
 
-  // Top banner, rotates every few seconds. level: info | news | warn | alert | good. label and link are optional.
+  // "Playing on ..." status on Discord: create an application at discord.com/developers, paste its Application ID here
+  // and upload an image under Rich Presence > Art Assets, its name goes in discordImage. Empty = off.
+  "discordAppId": "",
+  "discordImage": "",
+
+  // Shown when version is newer than the player's launcher. required: true = old launchers cannot deploy.
+  "launcher": { "version": "1.2.0", "url": "", "text": "", "required": false },
+
+  // Top banner for everyone, rotates; long texts scroll. level sets colour + default tag:
+  //   info (blue, MOTD) | news (gold) | warn (gold, NOTICE) | maintenance (gold) | alert (red) | error (red)
+  //   good (green, LIVE) | event (green) | update (blue)
+  // label = your own tag text, link = makes it clickable, from / until = only shown in that time window.
   "banner": [
-    { "level": "alert", "text": "Stormz is not in the team.." }
+    { "level": "news", "text": "Welcome to Dead Zone Protocol - the test phase is live. Report bugs on Discord." },
+    { "level": "warn", "label": "WIPE", "text": "Expect wipes during the test phase." }
+    // { "level": "event", "text": "Double XP weekend!", "from": "2026-10-31 18:00", "until": "2026-11-02 23:59" }
   ],
 
-  // Servers, the first one is selected by default. mods = load order + fallback while the server is offline
-  // (the launcher always uses the live mod list the server reports).
+  // NEWS page, newest first. In text: \n = new line, lines starting with "- " become bullets.
+  "news": [
+    {
+      "date": "2026-10-23",
+      "tag": "LAUNCHER",
+      "title": "New launcher",
+      "text": "The Dead Zone Protocol launcher is here:\n- one click to download every mod and join\n- server status, news and wipe timers",
+      "link": ""
+    }
+  ],
+
+  // Servers, the first one is selected by default.
+  //   maintenance: true = DEPLOY blocked, maintenanceText = reason on the card
+  //   restarts + timeZone = daily restart countdown, countdowns = one-off timers (wipe, event)
+  //   banner = extra banner messages only while this server is selected
+  //   mods = load order + fallback while the server is offline (the live list the server reports always wins)
   "servers": [
     {
       "name": "DEAD ZONE PROTOCOL",
@@ -21,126 +49,14 @@
       "queryPort": 2603,
       "tag": "TEST PHASE",
       "password": "",
-      "mods": [
-        { "id": 1559212036, "name": "CF" },
-        { "id": 2545327648, "name": "Dabs Framework" },
-        { "id": 2291785308, "name": "DayZ-Expansion-Core" },
-        { "id": 2792982069, "name": "DayZ-Expansion-AI" },
-        { "id": 1828439124, "name": "VPPAdminTools" },
-        { "id": 2931560672, "name": "Forward Operator Gear" },
-        { "id": 2303554682, "name": "Dogtags" },
-        { "id": 3571685323, "name": "AJs Weapons" },
-        { "id": 3824472160, "name": "DeadZoneProtocol_UI" },
-        { "id": 3824471543, "name": "Dead Zone Protocol" }
-      ]
-    },
-	{
-      "name": "DEAD ZONE 2 PROTOCOL",
-      "ip": "94.130.164.90",
-      "port": 2602,
-      "queryPort": 2603,
-      "tag": "TEST PHASE",
-      "password": "",
-      "mods": [
-        { "id": 1559212036, "name": "CF" },
-        { "id": 2545327648, "name": "Dabs Framework" },
-        { "id": 2291785308, "name": "DayZ-Expansion-Core" },
-        { "id": 2792982069, "name": "DayZ-Expansion-AI" },
-        { "id": 1828439124, "name": "VPPAdminTools" },
-        { "id": 2931560672, "name": "Forward Operator Gear" },
-        { "id": 2303554682, "name": "Dogtags" },
-        { "id": 3571685323, "name": "AJs Weapons" },
-        { "id": 3824472160, "name": "DeadZoneProtocol_UI" },
-        { "id": 3824471543, "name": "Dead Zone Protocol" }
-      ]
-    },
-	{
-      "name": "DEAD ZONE 2 PROTOCOL",
-      "ip": "94.130.164.90",
-      "port": 2602,
-      "queryPort": 2603,
-      "tag": "TEST PHASE",
-      "password": "",
-      "mods": [
-        { "id": 1559212036, "name": "CF" },
-        { "id": 2545327648, "name": "Dabs Framework" },
-        { "id": 2291785308, "name": "DayZ-Expansion-Core" },
-        { "id": 2792982069, "name": "DayZ-Expansion-AI" },
-        { "id": 1828439124, "name": "VPPAdminTools" },
-        { "id": 2931560672, "name": "Forward Operator Gear" },
-        { "id": 2303554682, "name": "Dogtags" },
-        { "id": 3571685323, "name": "AJs Weapons" },
-        { "id": 3824472160, "name": "DeadZoneProtocol_UI" },
-        { "id": 3824471543, "name": "Dead Zone Protocol" }
-      ]
-    },
-	{
-      "name": "DEAD ZONE 2 PROTOCOL",
-      "ip": "94.130.164.90",
-      "port": 2602,
-      "queryPort": 2603,
-      "tag": "TEST PHASE",
-      "password": "",
-      "mods": [
-        { "id": 1559212036, "name": "CF" },
-        { "id": 2545327648, "name": "Dabs Framework" },
-        { "id": 2291785308, "name": "DayZ-Expansion-Core" },
-        { "id": 2792982069, "name": "DayZ-Expansion-AI" },
-        { "id": 1828439124, "name": "VPPAdminTools" },
-        { "id": 2931560672, "name": "Forward Operator Gear" },
-        { "id": 2303554682, "name": "Dogtags" },
-        { "id": 3571685323, "name": "AJs Weapons" },
-        { "id": 3824472160, "name": "DeadZoneProtocol_UI" },
-        { "id": 3824471543, "name": "Dead Zone Protocol" }
-      ]
-    },
-	{
-      "name": "DEAD ZONE 2 PROTOCOL",
-      "ip": "94.130.164.90",
-      "port": 2602,
-      "queryPort": 2603,
-      "tag": "TEST PHASE",
-      "password": "",
-      "mods": [
-        { "id": 1559212036, "name": "CF" },
-        { "id": 2545327648, "name": "Dabs Framework" },
-        { "id": 2291785308, "name": "DayZ-Expansion-Core" },
-        { "id": 2792982069, "name": "DayZ-Expansion-AI" },
-        { "id": 1828439124, "name": "VPPAdminTools" },
-        { "id": 2931560672, "name": "Forward Operator Gear" },
-        { "id": 2303554682, "name": "Dogtags" },
-        { "id": 3571685323, "name": "AJs Weapons" },
-        { "id": 3824472160, "name": "DeadZoneProtocol_UI" },
-        { "id": 3824471543, "name": "Dead Zone Protocol" }
-      ]
-    },
-	{
-      "name": "DEAD ZONE 2 PROTOCOL",
-      "ip": "94.130.164.90",
-      "port": 2602,
-      "queryPort": 2603,
-      "tag": "TEST PHASE",
-      "password": "",
-      "mods": [
-        { "id": 1559212036, "name": "CF" },
-        { "id": 2545327648, "name": "Dabs Framework" },
-        { "id": 2291785308, "name": "DayZ-Expansion-Core" },
-        { "id": 2792982069, "name": "DayZ-Expansion-AI" },
-        { "id": 1828439124, "name": "VPPAdminTools" },
-        { "id": 2931560672, "name": "Forward Operator Gear" },
-        { "id": 2303554682, "name": "Dogtags" },
-        { "id": 3571685323, "name": "AJs Weapons" },
-        { "id": 3824472160, "name": "DeadZoneProtocol_UI" },
-        { "id": 3824471543, "name": "Dead Zone Protocol" }
-      ]
-    },
-	{
-      "name": "DEAD ZONE 2 PROTOCOL",
-      "ip": "94.130.164.90",
-      "port": 2602,
-      "queryPort": 2603,
-      "tag": "TEST PHASE",
-      "password": "",
+      "maintenance": false,
+      "maintenanceText": "",
+      "restarts": [],   // e.g. [ "00:00", "06:00", "12:00", "18:00" ]
+      "timeZone": "Europe/Berlin",
+      "countdowns": [
+        // { "label": "NEXT WIPE", "at": "2026-11-01T18:00:00+01:00" }
+      ],
+      "banner": [],
       "mods": [
         { "id": 1559212036, "name": "CF" },
         { "id": 2545327648, "name": "Dabs Framework" },
