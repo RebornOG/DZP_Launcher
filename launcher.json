@@ -8,7 +8,7 @@
 
   // Top banner, rotates every few seconds. level: info | news | warn | alert | good. label and link are optional.
   "banner": [
-    { "level": "news", "text": "Stormz is not in the team.." }
+    { "level": "alert", "text": "Stormz is not in the team.." }
   ],
 
   // Servers, the first one is selected by default. mods = load order + fallback while the server is offline
