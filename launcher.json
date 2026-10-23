@@ -1,0 +1,159 @@
+{
+  // Dead Zone Protocol launcher config. Host a copy online and put its raw link in LauncherConfig.RemoteUrl
+  // (src\Config.cs) to change servers / banner without shipping a new exe. Comments are allowed.
+
+  "tagline": "EXTRACTION SURVIVAL  //  CHERNARUS",
+  "discord": "",
+  "website": "",
+
+  // Top banner, rotates every few seconds. level: info | news | warn | alert | good. label and link are optional.
+  "banner": [
+    { "level": "news", "text": "Welcome to Dead Zone Protocol - the test phase is live. Report bugs on Discord." },
+    { "level": "warn", "label": "WIPE", "text": "Expect wipes during the test phase." }
+  ],
+
+  // Servers, the first one is selected by default. mods = load order + fallback while the server is offline
+  // (the launcher always uses the live mod list the server reports).
+  "servers": [
+    {
+      "name": "DEAD ZONE PROTOCOL",
+      "ip": "94.130.164.90",
+      "port": 2602,
+      "queryPort": 2603,
+      "tag": "TEST PHASE",
+      "password": "",
+      "mods": [
+        { "id": 1559212036, "name": "CF" },
+        { "id": 2545327648, "name": "Dabs Framework" },
+        { "id": 2291785308, "name": "DayZ-Expansion-Core" },
+        { "id": 2792982069, "name": "DayZ-Expansion-AI" },
+        { "id": 1828439124, "name": "VPPAdminTools" },
+        { "id": 2931560672, "name": "Forward Operator Gear" },
+        { "id": 2303554682, "name": "Dogtags" },
+        { "id": 3571685323, "name": "AJs Weapons" },
+        { "id": 3824472160, "name": "DeadZoneProtocol_UI" },
+        { "id": 3824471543, "name": "Dead Zone Protocol" }
+      ]
+    },
+	{
+      "name": "DEAD ZONE 2 PROTOCOL",
+      "ip": "94.130.164.90",
+      "port": 2602,
+      "queryPort": 2603,
+      "tag": "TEST PHASE",
+      "password": "",
+      "mods": [
+        { "id": 1559212036, "name": "CF" },
+        { "id": 2545327648, "name": "Dabs Framework" },
+        { "id": 2291785308, "name": "DayZ-Expansion-Core" },
+        { "id": 2792982069, "name": "DayZ-Expansion-AI" },
+        { "id": 1828439124, "name": "VPPAdminTools" },
+        { "id": 2931560672, "name": "Forward Operator Gear" },
+        { "id": 2303554682, "name": "Dogtags" },
+        { "id": 3571685323, "name": "AJs Weapons" },
+        { "id": 3824472160, "name": "DeadZoneProtocol_UI" },
+        { "id": 3824471543, "name": "Dead Zone Protocol" }
+      ]
+    },
+	{
+      "name": "DEAD ZONE 2 PROTOCOL",
+      "ip": "94.130.164.90",
+      "port": 2602,
+      "queryPort": 2603,
+      "tag": "TEST PHASE",
+      "password": "",
+      "mods": [
+        { "id": 1559212036, "name": "CF" },
+        { "id": 2545327648, "name": "Dabs Framework" },
+        { "id": 2291785308, "name": "DayZ-Expansion-Core" },
+        { "id": 2792982069, "name": "DayZ-Expansion-AI" },
+        { "id": 1828439124, "name": "VPPAdminTools" },
+        { "id": 2931560672, "name": "Forward Operator Gear" },
+        { "id": 2303554682, "name": "Dogtags" },
+        { "id": 3571685323, "name": "AJs Weapons" },
+        { "id": 3824472160, "name": "DeadZoneProtocol_UI" },
+        { "id": 3824471543, "name": "Dead Zone Protocol" }
+      ]
+    },
+	{
+      "name": "DEAD ZONE 2 PROTOCOL",
+      "ip": "94.130.164.90",
+      "port": 2602,
+      "queryPort": 2603,
+      "tag": "TEST PHASE",
+      "password": "",
+      "mods": [
+        { "id": 1559212036, "name": "CF" },
+        { "id": 2545327648, "name": "Dabs Framework" },
+        { "id": 2291785308, "name": "DayZ-Expansion-Core" },
+        { "id": 2792982069, "name": "DayZ-Expansion-AI" },
+        { "id": 1828439124, "name": "VPPAdminTools" },
+        { "id": 2931560672, "name": "Forward Operator Gear" },
+        { "id": 2303554682, "name": "Dogtags" },
+        { "id": 3571685323, "name": "AJs Weapons" },
+        { "id": 3824472160, "name": "DeadZoneProtocol_UI" },
+        { "id": 3824471543, "name": "Dead Zone Protocol" }
+      ]
+    },
+	{
+      "name": "DEAD ZONE 2 PROTOCOL",
+      "ip": "94.130.164.90",
+      "port": 2602,
+      "queryPort": 2603,
+      "tag": "TEST PHASE",
+      "password": "",
+      "mods": [
+        { "id": 1559212036, "name": "CF" },
+        { "id": 2545327648, "name": "Dabs Framework" },
+        { "id": 2291785308, "name": "DayZ-Expansion-Core" },
+        { "id": 2792982069, "name": "DayZ-Expansion-AI" },
+        { "id": 1828439124, "name": "VPPAdminTools" },
+        { "id": 2931560672, "name": "Forward Operator Gear" },
+        { "id": 2303554682, "name": "Dogtags" },
+        { "id": 3571685323, "name": "AJs Weapons" },
+        { "id": 3824472160, "name": "DeadZoneProtocol_UI" },
+        { "id": 3824471543, "name": "Dead Zone Protocol" }
+      ]
+    },
+	{
+      "name": "DEAD ZONE 2 PROTOCOL",
+      "ip": "94.130.164.90",
+      "port": 2602,
+      "queryPort": 2603,
+      "tag": "TEST PHASE",
+      "password": "",
+      "mods": [
+        { "id": 1559212036, "name": "CF" },
+        { "id": 2545327648, "name": "Dabs Framework" },
+        { "id": 2291785308, "name": "DayZ-Expansion-Core" },
+        { "id": 2792982069, "name": "DayZ-Expansion-AI" },
+        { "id": 1828439124, "name": "VPPAdminTools" },
+        { "id": 2931560672, "name": "Forward Operator Gear" },
+        { "id": 2303554682, "name": "Dogtags" },
+        { "id": 3571685323, "name": "AJs Weapons" },
+        { "id": 3824472160, "name": "DeadZoneProtocol_UI" },
+        { "id": 3824471543, "name": "Dead Zone Protocol" }
+      ]
+    },
+	{
+      "name": "DEAD ZONE 2 PROTOCOL",
+      "ip": "94.130.164.90",
+      "port": 2602,
+      "queryPort": 2603,
+      "tag": "TEST PHASE",
+      "password": "",
+      "mods": [
+        { "id": 1559212036, "name": "CF" },
+        { "id": 2545327648, "name": "Dabs Framework" },
+        { "id": 2291785308, "name": "DayZ-Expansion-Core" },
+        { "id": 2792982069, "name": "DayZ-Expansion-AI" },
+        { "id": 1828439124, "name": "VPPAdminTools" },
+        { "id": 2931560672, "name": "Forward Operator Gear" },
+        { "id": 2303554682, "name": "Dogtags" },
+        { "id": 3571685323, "name": "AJs Weapons" },
+        { "id": 3824472160, "name": "DeadZoneProtocol_UI" },
+        { "id": 3824471543, "name": "Dead Zone Protocol" }
+      ]
+    }
+  ]
+}
