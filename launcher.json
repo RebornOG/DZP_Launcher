@@ -8,8 +8,7 @@
 
   // Top banner, rotates every few seconds. level: info | news | warn | alert | good. label and link are optional.
   "banner": [
-    { "level": "news", "text": "Welcome to Dead Zone Protocol - the test phase is live. Report bugs on Discord." },
-    { "level": "warn", "label": "WIPE", "text": "Expect wipes during the test phase." }
+    { "level": "news", "text": "Stormz is not in the team.." }
   ],
 
   // Servers, the first one is selected by default. mods = load order + fallback while the server is offline
