@@ -1,46 +1,62 @@
 {
-  // Dead Zone Protocol launcher config. The launcher reads the hosted copy (RemoteUrl in src\Config.cs);
-  // this file is the fallback built into the exe. Comments like this one are allowed.
-  // Times: "2026-11-01 18:00" = the player's own clock, add an offset for server time: "2026-11-01T18:00:00+01:00".
+  // Example with every launcher feature. Copy it to your GitHub launcher.json and adjust.
+  // Comments (//) are allowed, the launcher skips them.
 
   "tagline": "EXTRACTION SURVIVAL  //  CHERNARUS",
-  "discord": "",
-  "website": "",
+  "discord": "https://discord.gg/yourinvite",
+  "website": "https://yourwebsite.com",
 
-  // "Playing on ..." status on Discord: create an application at discord.com/developers, paste its Application ID here
-  // and upload an image under Rich Presence > Art Assets, its name goes in discordImage. Empty = off.
+  // Discord status: Application ID from discord.com/developers + name of an uploaded Art Asset. Empty = off.
   "discordAppId": "",
-  "discordImage": "",
+  "discordImage": "dzp_logo",
 
-  // Shown when version is newer than the player's launcher. required: true = old launchers cannot deploy.
-  "launcher": { "version": "1.2.0", "url": "", "text": "", "required": false },
+  // Raise "version" above 1.2.0 (e.g. "1.3.0") and set "url" to show the UPDATE banner.
+  // "required": true = older launchers can no longer deploy.
+  "launcher": {
+    "version": "1.2.0",
+    "url": "https://github.com/RebornOG/DZP_Launcher/releases",
+    "text": "",
+    "required": false
+  },
 
-  // Top banner for everyone, rotates; long texts scroll. level sets colour + default tag:
-  //   info (blue, MOTD) | news (gold) | warn (gold, NOTICE) | maintenance (gold) | alert (red) | error (red)
-  //   good (green, LIVE) | event (green) | update (blue)
-  // label = your own tag text, link = makes it clickable, from / until = only shown in that time window.
+  // Banner for everyone, one entry per level so you can see them all rotate.
   "banner": [
-    { "level": "news", "text": "Welcome to Dead Zone Protocol - the test phase is live. Report bugs on Discord." },
-    { "level": "warn", "label": "WIPE", "text": "Expect wipes during the test phase." }
-    // { "level": "event", "text": "Double XP weekend!", "from": "2026-10-31 18:00", "until": "2026-11-02 23:59" }
+    { "level": "info", "text": "Welcome to Dead Zone Protocol - extract, survive, repeat." },
+    { "level": "news", "text": "Patch 0.3 is live - check the NEWS page for the full notes." },
+    { "level": "warn", "label": "WIPE", "text": "Full wipe on 1 November at 18:00 server time." },
+    { "level": "good", "text": "Both servers are up and running." },
+    { "level": "event", "text": "Double XP weekend is live!", "from": "2026-10-23T00:00:00+02:00", "until": "2026-10-27T00:00:00+01:00" },
+    { "level": "update", "text": "Join the Discord for patch notes, bug reports and events.", "link": "https://discord.gg/yourinvite" },
+    { "level": "alert", "text": "This is a very long message to show the ticker: when a banner text is wider than the banner it scrolls to the end, pauses, and starts again, and the banner waits for it before showing the next message." },
+    { "level": "error", "label": "KNOWN ISSUE", "text": "Traders can show a wrong price after a restart - relog fixes it." },
+    { "level": "maintenance", "text": "Short restart at 03:00 for a mod update.", "until": "2026-10-24T04:00:00+02:00" }
   ],
 
-  // NEWS page, newest first. In text: \n = new line, lines starting with "- " become bullets.
+  // NEWS page, sorted newest first. \n = new line, "- " at the start of a line = bullet.
   "news": [
     {
       "date": "2026-10-23",
+      "tag": "PATCH",
+      "title": "Patch 0.3 - Scav runs and flea market",
+      "text": "Biggest update of the test phase so far.\n- Scav runs with their own cooldown\n- Flea market opened in the hub\n- AI now searches for you after losing sight\n\nThanks to everyone reporting bugs!",
+      "link": "https://discord.gg/yourinvite"
+    },
+    {
+      "date": "2026-10-20",
       "tag": "LAUNCHER",
-      "title": "New launcher",
-      "text": "The Dead Zone Protocol launcher is here:\n- one click to download every mod and join\n- server status, news and wipe timers",
+      "title": "The launcher is here",
+      "text": "One click downloads every mod and joins the server.\n- Server status, news and wipe timers\n- Queue that joins as soon as a slot opens",
+      "link": ""
+    },
+    {
+      "date": "2026-10-15",
+      "tag": "INFO",
+      "title": "Test phase started",
+      "text": "Expect bugs and wipes. Report everything you find on Discord.",
       "link": ""
     }
   ],
 
-  // Servers, the first one is selected by default.
-  //   maintenance: true = DEPLOY blocked, maintenanceText = reason on the card
-  //   restarts + timeZone = daily restart countdown, countdowns = one-off timers (wipe, event)
-  //   banner = extra banner messages only while this server is selected
-  //   mods = load order + fallback while the server is offline (the live list the server reports always wins)
   "servers": [
     {
       "name": "DEAD ZONE PROTOCOL",
@@ -49,14 +65,22 @@
       "queryPort": 2603,
       "tag": "TEST PHASE",
       "password": "",
+
       "maintenance": false,
-      "maintenanceText": "",
-      "restarts": [],   // e.g. [ "00:00", "06:00", "12:00", "18:00" ]
+      "maintenanceText": "Updating to patch 0.4 - back in about 30 minutes",
+
+      // daily restarts in server time + one-off timers (they disappear once passed)
+      "restarts": [ "00:00", "06:00", "12:00", "18:00" ],
       "timeZone": "Europe/Berlin",
       "countdowns": [
-        // { "label": "NEXT WIPE", "at": "2026-11-01T18:00:00+01:00" }
+        { "label": "NEXT WIPE", "at": "2026-11-01T18:00:00+01:00" }
       ],
-      "banner": [],
+
+      // only shown while this server's tab is selected
+      "banner": [
+        { "level": "news", "label": "MAIN", "text": "Main server: Chernarus, 60 slots, first person only." }
+      ],
+
       "mods": [
         { "id": 1559212036, "name": "CF" },
         { "id": 2545327648, "name": "Dabs Framework" },
@@ -69,6 +93,27 @@
         { "id": 3824472160, "name": "DeadZoneProtocol_UI" },
         { "id": 3824471543, "name": "Dead Zone Protocol" }
       ]
+    },
+    {
+      // EXAMPLE second server so the tabs show - put your real one here or delete this block.
+      // Until it is a real server it shows as OFFLINE.
+      "name": "DZP | HARDCORE",
+      "ip": "127.0.0.1",
+      "port": 2302,
+      "queryPort": 27016,
+      "tag": "HARDCORE",
+      "password": "",
+      "maintenance": false,
+      "maintenanceText": "",
+      "restarts": [ "03:00", "15:00" ],
+      "timeZone": "Europe/Berlin",
+      "countdowns": [
+        { "label": "SEASON END", "at": "2026-12-01T18:00:00+01:00" }
+      ],
+      "banner": [
+        { "level": "alert", "label": "HARDCORE", "text": "No traders in raid, one life per wipe." }
+      ],
+      "mods": []
     }
   ]
 }
